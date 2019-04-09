@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Validation</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Linking in Angular -->
+    <script src="js/lib/angular/angular.min.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <section class="card register" ng-app="">
+            <!-- Force the form not to validate -->
+            <form name="myform" novalidate>
+
+                <div class="textintro">
+                    <h1>Form Validation</h1>
+                    <p>Please fill out the following form</p>
+                </div>
+
+                <fieldset>
+                    <input type="text" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true">
+                    <!-- This will only show if the form is invalid and was touched -->
+                    <p class="error validationerror" ng-show="myForm.firstname.$invalid && myForm.firstname.$touched">you must fill out your first name</p>
+
+                    <input type="text" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+                    <p class="error validationerror" ng-show="myForm.lastname.$invalid && myForm.lastname.$touched">you must fill out your last name</p>
+
+                    <input type="email" name="email" placeholder="Email" ng-model="user.email">
+                    <p class="error validationerror" ng-show="myForm.email.$invalid && myForm.email.$touched">you must fill out your email</p>
+
+                    <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+                    <p class="error validationerror" ng-show="myForm.password.$invalid && myForm.password.$touched" ng-minlength="6">your password must be 6 characters</p>
+                </fieldset>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
