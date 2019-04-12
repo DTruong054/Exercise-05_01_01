@@ -759,14 +759,17 @@ nav li a:hover {
   color: #657B83;
 }
 
+/* New styles for code */
+/* Outlines in red if there is something wrong */
 input.ng-invalid.ng-touched{
   border:1px solid red;
 }
-
+/* outline in gree if something is correct */
 input.ng-valid{
   border:1px solid #509D12;
 }
 
+/* Button is grey if something is incorrect */
 .ng-invalid .btn{
   background-color: grey;
 }
